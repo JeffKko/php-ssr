@@ -1,0 +1,262 @@
+body, html {
+  font-family: meiryo;
+  margin: 0;
+  padding: 0;
+}
+
+.breadcrumb {
+  padding: .75rem 1rem;
+  margin-bottom: 1rem;
+  list-style: none;
+  background-color: #eceeef;
+  border-radius: .25rem;
+  max-width: 500px;
+}
+
+.breadcrumb-item {
+  display: inline-block;
+}
+
+.breadcrumb-item+.breadcrumb-item:before {
+    display: inline-block;
+    padding-right: .5rem;
+    padding-left: .5rem;
+    color: #636c72;
+    content: "/";
+}
+
+.badge {
+    display: inline-block;
+    padding: .25em .4em;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25rem;
+}
+
+.badge-default {
+    background-color: #636c72;
+}
+
+.top-image {
+  width: 900px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 3rem;
+}
+
+activity__subtitle {
+  word-wrap: break-word;
+}
+
+.activity-list {
+    min-height: 80vh;
+    padding-bottom: 3rem;
+}
+
+/**
+ * single entity
+ */
+.activity {
+  margin: 0 auto;
+  max-width: 1024px;
+}
+
+.activity .badge {
+    font-weight: normal;
+}
+
+.activity .activity__title {
+    font-size: 1.6rem;
+}
+
+.activity .accent {
+    color: #FF6F00;
+    font-weight: bold;
+}
+
+.activity .flex {
+    display: flex;
+}
+
+.activity .flex .photo {
+    flex-basis: 0;
+    flex-grow: 1;
+}
+
+.activity .flex .photo img {
+    max-width: 100%;
+    object-fit: cover;
+    border: 1px solid #ccc;
+    padding: 5px;
+}
+
+.activity__location-map {
+}
+
+.activity__location-map svg {
+    fill: #FF6F00;
+    width: 30px;
+}
+
+.activity .activity__numbers {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.activity .activity__main-photo {
+    object-fit: cover;
+    overflow: hidden;
+    max-height: 450px;
+    width: 100%;
+    margin-bottom: 1.5rem;
+    border: 1px solid #ccc;
+    padding: 5px;
+}
+
+.activity .activity__subtitle {
+    font-size: 1.2rem;
+    border-right: 2px solid #ccc;
+    padding-right: 1rem;
+    font-weight: bold;
+}
+
+.activity .flex {
+  flex-direction: column;
+}
+
+.activity .activity__subscribe-block {
+    background-color: #eee;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 3px solid #ccc;
+}
+
+.activity .subscribe-button {
+    color: #fff;
+    background-color: #FF6F00;
+    border: 2px solid #DD4F00;
+    font-size: 1.4rem;
+    position: relative;
+    vertical-align: middle;
+    max-width: 100%;
+}
+
+.btn {
+    display: inline-block;
+    font-weight: 400;
+    line-height: 1.25;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: .5rem 1rem;
+    font-size: 1rem;
+    border-radius: .25rem;
+    -webkit-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+
+.activity .activity__heading {
+    color: #555;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-bottom: 2px solid #777;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.activity .activity__info-text {
+    padding: 0.5rem;
+    line-height: 1.8rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.activity .activity__photo {
+    object-fit: cover;
+    border: 1px solid #ccc;
+    padding: 5px;
+    max-width: 450px;
+    max-height: 300px;
+    width: 100%;
+}
+
+.activity .activity__photo.right {
+    float: right;
+    margin-left: 1rem;
+}
+
+.activity .activity__photo.left {
+    float: left;
+    margin-right: 1rem;
+}
+
+.activity .activity__important-notice {
+    border: 1px solid orange;
+    background-color: #FFF6E2;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.activity .activity__important-notice {
+    border: 1px solid orange;
+    background-color: #FFF6E2;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.activity__subscribe-block {
+  text-align: center;
+}
+
+.gooods-gallery {
+  height: auto;
+  max-width: 300px;
+}
+
+.gooods-gallery img {
+  width: 100%;
+}
+
+.seller-info {
+  border: 1px solid orange;
+  background-color: #FFF6E2;
+  height: 100%;
+}
+
+.seller-info-header {
+  padding: 3rem;
+  text-align: center;
+  background-color: rgb(224, 188, 108);
+}
+
+.seller-info-body ul {
+  list-style-type: none;
+}
+
+.seller-info-body ul li {
+  padding: 1rem;
+}
+
+.row {
+  display: flex;
+}
+
+.col-8 {
+  flex: 8;
+}
+
+.col-4 {
+  flex: 4;
+}
