@@ -5,11 +5,11 @@ var template = `
     <div class="col-8">
       <div class="goods-info">
         <h1 class="activity__title">
-            <span class="badge badge-default">買う</span> {{ goodsName }}
+          <span class="badge badge-default">買う</span> {{ goodsName }}
         </h1>
         <div class="activity__numbers">
-            <div>価格：<span class="accent">{{ price }}</span></div>
-            <div>送料：<span class="accent">{{ shipping }}</span></div>
+          <div>価格：<span class="accent">{{ price }}</span></div>
+          <div>送料：<span class="accent">{{ shipping }}</span></div>
         </div>
       </div>
       <div class="gooods-gallery">
@@ -29,6 +29,21 @@ var template = `
             <li>全部商品： {{ sellerGoodsCount }}</li>
             <li>評價分數： {{ sellerEvaluate }} (查看)</li>
             <li>關於我</li>
+            <li>
+  <div v-for="value in 10">
+    <div v-for="value in 10">
+      <div v-for="value in 10">
+        <div v-for="value in 10">
+        {{value}}
+          <div v-for="value2 in 10">
+          {{value + value2}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</li>
+
           </ul>
         </div>
       </div>
@@ -56,33 +71,32 @@ var template = `
 </div>
 `
 
-const vm = new Vue({
-  template,
-  data: {
-    goodsName: PHP.context.$goodsName,
-    goodsDescription: PHP.context.$goodsDescription,
-    goodsImage: PHP.context.$goodsImage,
-    price: PHP.context.$price,
-    shipping: PHP.context.$shipping,
-    sellerNick: PHP.context.$sellerNick,
-    sellerEvaluate: PHP.context.$sellerEvaluate,
-    sellerGoodsCount: PHP.context.$sellerGoodsCount,
-  },
-  mounted() {
-    axios.get(`db/test.json?${new Date().getTime()}`)
-      .then(res => {
-        this.sellerNick = res.data.sellerNick
-        this.sellerEvaluate = res.data.sellerEvaluate
-        this.sellerGoodsCount = res.data.sellerGoodsCount
-      })
-  },
-  methods: {
-    showPopup() {
-      alert('缺貨中~~~~~~')
+export default () => {
+
+  return new Vue({
+    template,
+    data: {
+      goodsName: PHP.context.$goodsName,
+      goodsDescription: PHP.context.$goodsDescription,
+      goodsImage: PHP.context.$goodsImage,
+      price: PHP.context.$price,
+      shipping: PHP.context.$shipping,
+      sellerNick: PHP.context.$sellerNick,
+      sellerEvaluate: PHP.context.$sellerEvaluate,
+      sellerGoodsCount: PHP.context.$sellerGoodsCount,
+    },
+    mounted() {
+      axios.get(`db/test.json?${new Date().getTime()}`)
+        .then(res => {
+          this.sellerNick = res.data.sellerNick
+          this.sellerEvaluate = res.data.sellerEvaluate
+          this.sellerGoodsCount = res.data.sellerGoodsCount
+        })
+    },
+    methods: {
+      showPopup() {
+        alert('缺貨中~~~~~~')
+      }
     }
-  }
-})
-
-
-// client side only
-vm.$mount('#app')
+  })
+}
