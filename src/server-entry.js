@@ -1,8 +1,8 @@
 import createApp from './app.js'
 
-const vm = createApp()
+const vm = createApp(PHP.context)
 
-// server side only
+
 renderVueComponentToString(vm, (err, res) => {
 
   const html = `
@@ -26,5 +26,5 @@ renderVueComponentToString(vm, (err, res) => {
   </html>
   `
 
-  PHP.context.__call("writeFile", [html])
+  PHP.utility.__call("writeFile", [html])
 })

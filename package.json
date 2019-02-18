@@ -2,13 +2,16 @@
   "name": "php-ssr",
   "version": "1.0.0",
   "description": "",
-  "main": "app-client.js",
+  "main": "client.html",
   "directories": {
     "lib": "lib"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "parcel build src/client-entry.js --no-source-maps --out-file client-bundle.js && parcel build src/server-entry.js --no-source-maps --out-file server-bundle.js"
+    "build": "parcel build src/client-entry.js --no-source-maps --out-file client-bundle.js && parcel build src/server-entry.js --no-source-maps --out-file server-bundle.js",
+    "serve": "parcel src/client-entry.js --no-source-maps --no-hmr -d ./ --out-file i_just_for_run_a_server",
+    "ssr": "php ssr-cache.php",
+    "puppeteer": "node puppeteer/index.js http://localhost:1234/client.html"
   },
   "repository": {
     "type": "git",
@@ -29,7 +32,9 @@
     "babel-preset-env": "^1.7.0",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
-    "parcel-bundler": "^1.11.0"
+    "fs": "0.0.1-security",
+    "parcel-bundler": "^1.11.0",
+    "puppeteer": "^1.12.2"
   },
   "dependencies": {
     "babel-runtime": "^6.26.0"

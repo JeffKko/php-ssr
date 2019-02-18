@@ -29,21 +29,6 @@ var template = `
             <li>全部商品： {{ sellerGoodsCount }}</li>
             <li>評價分數： {{ sellerEvaluate }} (查看)</li>
             <li>關於我</li>
-            <li>
-  <div v-for="value in 10">
-    <div v-for="value in 10">
-      <div v-for="value in 10">
-        <div v-for="value in 10">
-        {{value}}
-          <div v-for="value2 in 10">
-          {{value + value2}}
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</li>
-
           </ul>
         </div>
       </div>
@@ -71,19 +56,18 @@ var template = `
 </div>
 `
 
-export default () => {
-
+export default (context) => {
   return new Vue({
     template,
     data: {
-      goodsName: PHP.context.$goodsName,
-      goodsDescription: PHP.context.$goodsDescription,
-      goodsImage: PHP.context.$goodsImage,
-      price: PHP.context.$price,
-      shipping: PHP.context.$shipping,
-      sellerNick: PHP.context.$sellerNick,
-      sellerEvaluate: PHP.context.$sellerEvaluate,
-      sellerGoodsCount: PHP.context.$sellerGoodsCount,
+      goodsName: context.goodsName,
+      goodsDescription: context.goodsDescription,
+      goodsImage: context.goodsImage,
+      price: context.price,
+      shipping: context.shipping,
+      sellerNick: context.sellerNick,
+      sellerEvaluate: context.sellerEvaluate,
+      sellerGoodsCount: context.sellerGoodsCount,
     },
     mounted() {
       axios.get(`db/test.json?${new Date().getTime()}`)
